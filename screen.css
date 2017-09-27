@@ -42,7 +42,11 @@ html {
 	color: white;
 	font-family: Helvetica, Arial, sans-serif;
 }
-
+body{
+  padding-top: 66px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
 h1,h2,h3,p{
     padding-bottom: 1.22em;
 }
@@ -64,19 +68,34 @@ li > ol,
 li > ul{
   padding-top: 11px;
   padding-bottom: 0;
-  padding-left: 22px;
+  padding-left: 22px; /*1 lede*/
 }
 li li:last-child{
   padding-bottom: 0;
   }
-  li{
 
+/*Layout*/
+#navigation{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-> ul{
-
+#navigation li{
+  width: 33.33%;
+  float: left;
 }
->ol{
-
+/*Modular*/
+nav ul{
+  list-style-type: none;
+}
+nav a{
+  display: block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background-color: green;
+  text-align: center;
+  text-decoration: none;
 }
 blockquote, q {
 	quotes: none;
