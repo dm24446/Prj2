@@ -52,7 +52,6 @@ html {
 	-ms-text-size-adjust: 100%;
 
   text-size-adjust: 100%;
-	color: Blue;
 	font-family: Helvetica, Arial, sans-serif;
 }
 body{
@@ -74,7 +73,6 @@ li{ /*list item*/
 }
 ol, ul { /*ordered list, unordered list*/
   padding-bottom: .611em;
-  color: blue;
 	list-style: none;
 }
 ul{
@@ -82,6 +80,7 @@ ul{
 }
 ol{
   list-style-type: decimal;
+	color: blue;
 }
 li > ul,
 li > ol{
@@ -138,6 +137,9 @@ nav a{
 		padding-right: 3.261%; /*30/920*/
 		padding-left: 3.261%;
 	}
+	/*#content{
+		position: absolute;
+	}*/
 	#primary{
 		width: 65.989%;
 		float: left;
@@ -145,11 +147,16 @@ nav a{
 	#supporting{
 		width: 31.91%;
 		margin-left: 17.5px;
-		float: left;
+		position:absolute;
+		top: 0;
+		right: 0;
 	}
 	#footer{
 		clear: both;
-
+		float: none;
+	}
+	.flexbox #content{
+		display: flex;
 	}
 }
 /**/
