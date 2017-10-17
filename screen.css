@@ -71,10 +71,22 @@ h1,h2,p{
 h1{
 	font-size: 1.78em;
 	line-height: 1.032em;
-	padding-bottom: 1.22em;
 	padding-top: 1.22em;
+	text-align: center;
 }
-li{ /*list item*/
+h2{
+	font-size: 1.45em;
+	line-height: 1.032em;
+	padding-top: 1.22em;
+	text-align: left;
+	}
+	.iit{
+		display: block;
+		margin: auto;
+		padding-bottom: 1.22em;
+		max-width: 1000000000%;
+	}
+	li{ /*list item*/
   padding-bottom: .611em;
 }
 ol, ul { /*ordered list, unordered list*/
@@ -110,7 +122,6 @@ li li:last-child{
   width: 33.333333%;
   float: left;
 }
-
 .flexbox #navigation {
   position: static;
 }
