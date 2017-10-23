@@ -46,8 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* End Reset CSS
-  Begins Site styles */
+/* End Reset CSS || Begins Site styles */
 html {
   font-size: 1.125em;
   line-height: 1.22em; /*(22/18)*/
@@ -66,46 +65,54 @@ body{
   padding-right: 1.22em;
 	background-color: #eac67a;
 	}
-h1,h2,h3,p{
-		padding-top: 1.22em;
-		padding-bottom: 1.22em;
+p{
+		padding-top: .22em;
+		padding-bottom: .22em;
 }
 h1{
-	font-size: 1.78em;
+	font-size: 2.78em;
 	line-height: 1.032em;
 	padding-top: 2.22em;
 	padding-bottom: 1.22em;
 	color: #eeeeee;
-	text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	text-align: center;
-
+	text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 h2{
 	font-size: 1.45em;
 	line-height: 1.032em;
 	padding-top: 1.22em;
 	text-align: left;
-	}
-	h3{
-		font-size: 1.45em;
-		line-height: 1.032em;
-		padding-top: 1.22em;
-		text-align: left;
-		text-decoration: underline;
-	}
+}
+h3{
+	font-size: 1.45em;
+	line-height: 1.032em;
+	padding-top: 1.22em;
+	padding-bottom: .05em;
+	text-align: left;
+	border-bottom-style: solid;
+	border-width: thin;
+}
+h4{
+	font-size: 1.25em;
+	line-height: 1.032em;
+	padding-top: 1.22em;
+	padding-bottom: 1.22em;
+	text-align: left;
+}
 li{ /*list item*/
   padding-bottom: .611em;
 }
 ol, ul { /*ordered list, unordered list*/
   padding-bottom: .611em;
 	list-style: none;
+	margin-left: 2.22em;
 }
 ul{
   list-style-type: circle;
 }
 ol{
   list-style-type: decimal;
-	color: gray;
 }
 li > ul,
 li > ol{
@@ -123,11 +130,13 @@ li li:last-child{
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
-	margin: inherit;
 	width:100%;
 	border-radius: 1.22em;
-
-
+}
+#footer{
+	font-size: .666em;
+	clear: both;
+	float: none;
 }
 #navigation {
   position: absolute;
@@ -151,20 +160,19 @@ li li:last-child{
 
 /*Modular*/
 nav ul{
-  list-style-type: none;
+	list-style-type: none;
+	margin-left: 0;
 }
 nav a{
-  display: block;
-  padding-top: .611em; /*11/18*/
-  padding-bottom: .611em;
-  background-color: black;
+	display: block;
+	padding-top: .611em; /*11/18*/
+	padding-bottom: .611em;
+	background-color: black;
 	color: #eac67a;
-  text-align: center;
-  text-decoration: none;
+	text-align: center;
+	text-decoration: none;
 }
 
-
-/*Base*/
 /*State*/
 @media screen and (min-width: 720px){
 	body{
@@ -184,22 +192,40 @@ nav a{
 		padding-right: 3.261%; /*30/920*/
 		padding-left: 3.261%;
 	}
-	/*#content{
-		position: absolute;
-	}*/
+	#content{
+		position: relative;
+	}
 	#primary{
-		width: 65.989%;
+		width: 100%;
 		float: left;
 		}
-	#supporting{
+	#EERequirements{
+		width: 65.989%;
+		float: left;
+		position: relative;
+	}
+	#CPERequiremnts
+	#CPERequiremnts{
+		width: 65.989%;
+		float: left;
+		position: absolute;
+	}
+	#EEStatus,
+	#CPEStatus{
 		width: 31.91%;
 		margin-left: 17.5px;
-		position:absolute;
-		top: 0;
+		float: right;
+		top:  0;
 		right: 0;
 	}
-	.flexbox #primary,
-	.flexbox #supporting{
+	.flexbox #content{
+		display: flex;
+		align-items: baseline;
+	}
+	.flexbox #EERequirements,
+	.flexbox #CPERequiremnts,
+	.flexbox #EEStatus,
+	.flexbox #CPEStatus{
 		float: none;
 		margin: 0;
 		width: auto;
@@ -210,17 +236,9 @@ nav a{
 		grid-column-gap: 2.035%;
 		grid-column-gap: 35px;
 	}
-	.cssgrid #primary{
+	.cssgrid #EERequirements,#CPERequiremnts{
 		grid-column: 1/3;
 	}
-	.cssgrid #supporting{
+	.cssgrid #EEStatus,#CPEStatus{
 		grid-column: 3/4;
-	}
-	#footer{
-		clear: both;
-		float: none;
-	}
-	.flexbox #content{
-		display: flex;
-		align-items: baseline;
 	}
