@@ -94,7 +94,7 @@ h3{
 	border-width: thin;
 }
 h4{
-	font-size: 1.25em;
+	font-size: 1.45em;
 	line-height: 1.032em;
 	padding-top: 1.22em;
 	padding-bottom: 1.22em;
@@ -104,16 +104,21 @@ h4{
 h5{
 	font-size: 1.25em;
 	line-height: 1.032em;
-	padding-top: 1.22em;
+	padding-top: .66em;
 	padding-bottom: 1.22em;
 	font-style: oblique;
 	text-align: left;
 }
+aside{
+	border-radius: 2.1875em;
+	padding-top: .66em;
+	padding-bottom: 1.22em;
+	}
 li{ /*list item*/
   padding-bottom: .611em;
 }
 ol, ul { /*ordered list, unordered list*/
-  padding-bottom: .611em;
+  padding-bottom: 1.22em;
 	list-style: none;
 	margin-left: 2.22em;
 }
@@ -132,7 +137,26 @@ li > ol{
 li li:last-child{
   padding-bottom: 0;
   }
-
+	/*Modular*/
+	nav ul{
+		list-style-type: none;
+		margin-left: 0;
+	}
+	nav a{
+		display: block;
+		padding-top: .611em; /*11/18*/
+		padding-bottom: .611em;
+		background-color: black;
+		color: #eac67a;
+		text-align: center;
+		text-decoration: none;
+	}
+	footer{
+		font-size: .611em;
+		background-color: black;
+		text-align: center;
+		color: #eac67a;
+	}
 /*Layout*/
 #header {
 	background-image: url("iit.jpg");
@@ -142,10 +166,12 @@ li li:last-child{
 	width:100%;
 	border-radius: 1.22em;
 }
-#footer{
-	font-size: .666em;
-	clear: both;
-	float: none;
+#foot{
+	clear:both;
+}
+.flexbox #foot{
+	float:none;
+	position: static;
 }
 #navigation {
   position: absolute;
@@ -166,64 +192,6 @@ li li:last-child{
 .flexbox #navigation li {
   float: none;
 }
-
-/*Modular*/
-nav ul{
-	list-style-type: none;
-	margin-left: 0;
-}
-nav a{
-	display: block;
-	padding-top: .611em; /*11/18*/
-	padding-bottom: .611em;
-	background-color: black;
-	color: #eac67a;
-	text-align: center;
-	text-decoration: none;
-}
-
-/*State*/
-@media screen and (min-width: 370px) {
-  body {
-    padding-right: 0%; /* 22 / 370 = 0.059459459 */
-    padding-left: 0%; /* 22 / 370 = 0.059459459 */
-  }
-}
-@media screen and (min-width: 500px) {
-	body{
-		padding-right: 0%;
-    padding-left: 0%;
-	}
-}
-
-@media screen and (min-width: 720px) {
-	body {
-    padding-right: 0%;
-    padding-left: 0%;
-  }
-}
-@media screen and (min-width: 900px){
-	/*
-   920px / whole screen
-   -60px / margins (total)
-   275px / column
-    17.5px / gutter
-   Left-hand column : 275 * 2 + 17.5 = 567.5
-   Right-hand column: 275px, offset by 17.5
-  */
-	html {
-		font-size: 1.25em; /* 20 / 16 = 1.25 */
-	}
-	body{
-		padding-right: 0%; /*30/920*/
-		padding-left: 0%;
-	}
-	@media screen and (min-width: 1185px) {
-  body {
-    padding-right: 0%;
-    padding-left: 0%;
-  }
-}
 	#content{
 		position: relative;
 	}
@@ -235,65 +203,166 @@ nav a{
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-column-gap: 2.035%;
-		grid-column-gap: 35px;
+		grid-row-gap: 15px;
 	}
 	#primary{
 		width: 100%;
 		float: left;
 		}
-	#EEReq,
-	#CPEReq,
-	#PEReq,
-	#MTHReq,
-	#SCIReq,
-	#LAReq{
-		width: 65.989%;
+	#Req{
+		width: 45%;
 		float: left;
-		position: relative;
-	}
-	.flexbox #EEReq,
-	.flexbox #CPEReq,
-	.flexbox #PEReq,
-	.flexbox #MTHReq,
-	.flexbox #SCIReq,
-	.flexbox #LAReq{
+		background-position: left;
+		}
+	.flexbox #Req{
 		float: left;
-		margin: 0;
 		width:auto;
 	}
-	.cssgrid #EEReq,
-	.cssgrid #CPEReq,
-	.cssgrid #PEReq,
-	.cssgrid #MTHReq,
-	.cssgrid #SCIReq,
-	.cssgrid #LAReq{
+	.cssgrid #Req{
 		grid-column: 1/3;
 	}
-	#EEStatus,
-	#CPEStatus,
-	#PEStatus,
-	#MTHStatus,
-	#SCIStatus,
-	#LAStatus{
-		width: 31.91%;
+	#Cmp{
+		background-color: #4A570C;
+		color: #eac67a;
+		width: 40%;
+		background-clip: content-box;
 		margin-left: 20px;
 		float: left;
 	}
-	.flexbox #EEStatus,
-	.flexbox #CPEStatus,
-	.flexbox #PEStatus,
-	.flexbox #MTHStatus,
-	.flexbox #SCIStatus,
-	.flexbox #LAStatus{
-		float: left;
+	.flexbox #Cmp{
+		float: right;
 		margin: 0;
 		width: auto;
 	}
-	.cssgrid #EEStatus,
-	.cssgrid #CPEStatus,
-	.cssgrid #PEStatus,
-	.cssgrid #MTHStatus,
-	.cssgrid #SCIStatus,
-	.cssgrid #LAStatus{
-		grid-column: 3/4;
+	.cssgrid #Cmp{
+		grid-column: 2/3;
+	}
+	#Status{
+		background-color: #984b43;
+		background-clip: content-box;
+		color: #eac67a;
+		width: 40%;
+		margin-left: 20px;
+		float: left;
+	}
+	.flexbox #Status{
+		float: center;
+		margin: 0;
+		width: auto;
+	}
+	.cssgrid #Status{
+		grid-column: 3/3;
+	}
+	/*State Styles*/
+	@media screen and (min-width: 280px) {
+		body{
+			padding-left: 0%;
+			padding-right: 0%;
+		}
+		li {
+			font-size: .611em;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 15em;
+			font-size: .851em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			padding-left: .938em;
+			position: relative;
+	  }
+	}
+	@media screen and (min-width: 345px) {
+		body{
+			padding-left: 1%;
+			padding-right: 1%;
+		}
+		li {
+			font-size: .611em;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 15em;
+			font-size: .851em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			position: relative;
+	  }
+	}
+	@media screen and (min-width: 520px) {
+		body{
+			padding-left: 3%;
+			padding-right: 3%;
+		}
+		li {
+			font-size: .938em;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 20em;
+			font-size: .851em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			position: relative;
+	  }
+	}
+	@media screen and (min-width: 800px) {
+		body{
+			padding-left: 3.25%;
+			padding-right: 3.25%;
+		}
+		li {
+			font-size: 1em;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 20em;
+			font-size: .938em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			position: relative;
+	  }
+	}
+	@media screen and (min-width: 920px) {
+		body{
+			padding-left: 3.25%;
+			padding-right: 3.25%;
+		}
+		li {
+			font-size: 1.22em;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 20em;
+			font-size: 1.063em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			position: relative;
+	  }
+	}
+	@media screen and (min-width: 1185px) {
+		body{
+			padding-left: 6%;
+			padding-right: 6%;
+		}
+		article{
+			padding-bottom: .9375em;
+		}
+		aside {
+			width: 20em;
+			font-size: 1.063em;
+			padding-top: 1.5625em;
+			padding-bottom: 1.5625em;
+			position: relative;
+	  }
 	}
